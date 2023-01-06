@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     
     # User Defined
     'accounts.apps.AccountsConfig',
+    'todo.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [
