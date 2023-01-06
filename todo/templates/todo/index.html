@@ -1,12 +1,7 @@
+{% extends 'todo/base.html' %}
+{% block title %}To&nbsp;Do{% endblock title %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To&nbsp;Do</title>
-
+{% block style %}
     <style>
         nav{
             text-align: center;
@@ -16,14 +11,14 @@
             display: inline;
         }
     </style>
-</head>
-<body>
+{% endblock style %}
+    
+{% block nav %}
     <nav>
         <ul>
-            <li> <a href="">Add New To Do</a> </li> |
+            <li> <a href="{% url 'todo:new' %}">Add New To Do</a> </li> |
             <li><a href="">View All To do</a></li> |
             <li><a href="">History</a></li>
         </ul>
     </nav>
-</body>
-</html>
+{% endblock nav %}
