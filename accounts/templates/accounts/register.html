@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registration</title>
     <style>
         header>h3 > b {
             text-align: center;
@@ -23,10 +23,10 @@
             <legend><b>Register</b></legend>
             <form action="{% url 'accounts:register' %}" method="post">
                 {% csrf_token %}
-                <label for="username">Name</label><input name="username" type="text"> <br>
-                <label for="email" id="email">Email</label><input name="email" type="text"> <br>
-                <label for="password" id="password">Password</label><input type="password"> <br>
-                <label for="confirm_password" id="confirm_password">Confirm Password</label><input name="password" type="password"><br>
+                <label for="username">Name</label><input name="username" type="text" required> <br>
+                <label for="email" id="email">Email</label><input name="email" type="text" required> <br>
+                <label for="password" id="password">Password</label><input type="password" required> <br>
+                <label for="confirm_password" id="confirm_password">Confirm Password</label><input name="password" type="password" required><br>
                 <input type="submit" value="submit" onclick="validate()">
             </form>
         </fieldset>
