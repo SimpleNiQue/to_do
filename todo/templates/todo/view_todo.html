@@ -1,0 +1,15 @@
+{% extends 'todo/index.html' %}
+{% block title %}View&nbsp;Todo{% endblock title %}
+
+{% block mid-content %}
+    <ul>
+        {% for todo in all_todo %}
+            {% if todo.status is False %}
+                <li><h4>{{todo.time}} - {{todo.todo_item}} - Pending</h4></li>
+            {% else %}
+            <li><h4>{{todo.time}} - {{todo.todo_item}} - Completed</h4></li>
+
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock mid-content %}

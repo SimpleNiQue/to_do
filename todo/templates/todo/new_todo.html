@@ -4,7 +4,7 @@
 {% block mid-content %}
     <form action="{% url 'todo:new'%}" method="post">
         {% csrf_token %}
-        <input type="checkbox" name="status" value="">
+        <input type="checkbox" name="status" value="pending">
         <input type="text" name="item" placeholder="What do yu want to do?">
         <input type="submit" value="Save">
     </form>

@@ -9,15 +9,16 @@ def home(request):
 
 def new_todo(request):
     if request.method == 'POST':
-        
+        print(request.POST)
         todo_item = request.POST.get('item')
         # item = str(todo_item).strip()
 
-        status = request.POST.get('status')
+        status = request.POST.get('status', False)
+        if status:
+            status = True
+        print(status)
         
         if todo_item:
-            if not status: status = False
-            else: status = True
                 
             new_item = models.Todo.objects.create(
                                     todo_item=todo_item,
@@ -31,3 +32,14 @@ def new_todo(request):
             print("Wrong todo item")
 
     return render(request, 'todo/new_todo.html')
+
+def view_todo(request):
+    todos = models.Todo.objects.all()
+    template = 'todo/view_todo.html'
+    context = {
+        'all_todo': todos,
+    }
+
+    return render(request, template, context)
+
+
