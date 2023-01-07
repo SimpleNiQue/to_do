@@ -6,3 +6,5 @@ class Todo(models.Model):
     status = models.BooleanField(default=False)
     time = models.DateTimeField(auto_now_add=True)
 
+
+
